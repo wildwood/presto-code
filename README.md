@@ -4,10 +4,10 @@ PrestoQ code question
 # Instructions to Run
 This project uses gradle to build and run.
 
-On Windows, run "gradlew run --args='<file-name>'"
-On unix, it's about the same: "./gradlew run --args='<file-name>'"
+On Windows, run "gradlew run --args='*file-name*'"
+On unix, it's about the same: "./gradlew run --args='*file-name*'"
 
-where <file-name> is the path to the catalog information file is located.
+where *file-name* is the path to the catalog information file is located.
 
 The program will print the resulting ProductRecord objects to stdout.  This
 is mainly meant as a simple example of a read-build loop.
