@@ -3,12 +3,24 @@
  */
 package prestoq.code;
 
-public class App {
-    public String getGreeting() {
-        return "Hello world.";
-    }
+import java.io.BufferedReader;
+import java.io.FileInputStream;
+import java.io.InputStreamReader;
 
+public class App {
     public static void main(String[] args) {
-        System.out.println(new App().getGreeting());
+	try {
+	    BufferedReader br = new BufferedReader(new InputStreamReader(new FileInputStream(args[0])));
+
+	    String line;
+	    while ((line = br.readLine()) != null) {
+		ProductRecord record = new ProductRecord.Builder(line).build();
+		System.out.println(record.toString());
+	    }
+	    br.close();
+
+	} catch (java.io.IOException e) {
+	    e.printStackTrace();
+	}
     }
 }

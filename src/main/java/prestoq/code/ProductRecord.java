@@ -111,7 +111,7 @@ public final class ProductRecord {
 	StringBuffer sb = new StringBuffer();
 	sb.append(getProductId());
 	sb.append("\t");
-	sb.append(getProductDescription());
+	sb.append(getProductDescription().trim());
 	sb.append("\t");
 	sb.append(getRegularDisplayPrice());
 	sb.append("\t");
@@ -120,8 +120,6 @@ public final class ProductRecord {
 	sb.append(getPromotionalDisplayPrice());
 	sb.append("\t");
 	sb.append(getPromotionalCalculatedPrice());
-	sb.append("\t");
-	sb.append(getPromotionalDisplayPrice());
 	sb.append("\t");
 	sb.append(getUnits());
 	sb.append("\t");
@@ -240,7 +238,6 @@ public final class ProductRecord {
 	}
 	
 	public ProductRecord build() {
-	    System.out.println(toString());
 	    return new ProductRecord(this);
 	}
 
